@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/blogs',function(){
-    return view('blogs.index');
-});
+Route::get('/blogs',[BlogController::class ,'index'])->name('blogs.index');
+Route::get('/blogs/create',[BlogController::class ,'create'])->name('blogs.create');
+Route::post('/blogs',[BlogController::class ,'store'])->name('blogs.store');
+Route::get('/blogs/{id}/edit',[BlogController::class ,'edit'])->name('blogs.edit');
+Route::patch('/blogs/{id}',[BlogController::class ,'update'])->name('blogs.update');
+Route::delete('/blogs/{id}',[BlogController::class ,'delete'])->name('blogs.delete');
+
+
 
 Route::get('/', function () {
     return view('welcome');
