@@ -37,6 +37,8 @@
                 <th>Title</th>
                 <th>Content</th>
                 <th>Author Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody>
@@ -46,6 +48,14 @@
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->content }}</td>
                     <td>{{ $blog->user_name }}</td>
+                    <td>Edit</td>
+                    <td>
+                        <form action=" {{route('blogs.delete',['id'=>$blog->id])}}  " method="post">
+                            @csrf
+@method('DELETE')
+                           <input type="submit" value="Delete">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

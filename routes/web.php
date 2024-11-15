@@ -19,7 +19,7 @@ Route::get('/blogs/create',[BlogController::class ,'create'])->name('blogs.creat
 Route::post('/blogs',[BlogController::class ,'store'])->name('blogs.store');
 Route::get('/blogs/{id}/edit',[BlogController::class ,'edit'])->name('blogs.edit');
 Route::patch('/blogs/{id}',[BlogController::class ,'update'])->name('blogs.update');
-Route::delete('/blogs/{id}',[BlogController::class ,'delete'])->name('blogs.delete');
+Route::delete('/blogs/{id}',[BlogController::class ,'destroy'])->name('blogs.delete');
 
 
 
