@@ -84,7 +84,7 @@
     <div class="form-container">
         <h2 class="form-title">Blog Information</h2>
 
-        <form action="" method="POST">
+        <form action=" {{route('blogs.store') }} " method="POST">
             @csrf
 
             <!-- Name Field -->

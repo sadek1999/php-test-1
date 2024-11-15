@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use Illuminate\Http\Request;
+
+use function Ramsey\Uuid\v1;
 
 class BlogController extends Controller
 {
@@ -35,7 +38,13 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
+          $data=$request->validate([
+            'title'=>'required',
+            'content'=>'required',
+            'user_name'=>"required",
+          ]);
+          Blog::create($data);
+          return redirect(route('blogs.index'));
     }
 
     /**
