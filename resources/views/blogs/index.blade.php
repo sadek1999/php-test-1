@@ -48,7 +48,9 @@
                     <td>{{ $blog->title }}</td>
                     <td>{{ $blog->content }}</td>
                     <td>{{ $blog->user_name }}</td>
-                    <td>Edit</td>
+                    <td>
+                        <a href="{{route('blogs.edit' , ['id'=>$blog->id] )}}">Edit</a>
+                    </td>
                     <td>
                         <form action=" {{route('blogs.delete',['id'=>$blog->id])}}  " method="post">
                             @csrf
